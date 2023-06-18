@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho de Compras</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="overlay" class="overlay"
+        onclick="$('.overlay').hide(); $('#pop-up-cupom').hide(); $('#adicionar-cupom').hide(); $('#lista-cupons').hide();">
+    </div>
+
+    <div id="carrinho">
+        <button onclick="$('#overlay').show(); $('#pop-up-cupom').show();">Usar Cupom</button>
+        <button onclick="$('#overlay').show(); $('#adicionar-cupom').show();">Adicionar Cupom</button>
+        <button onclick="$('#overlay').show(); mostrarCupons();">Ver Cupons</button>
+    </div>
+
+    <div id="pop-up-cupom">
+        <span class="fechar" onclick="$('#overlay').hide(); $('#pop-up-cupom').hide();">X</span>
+        <input type="text" id="codigo-cupom" placeholder="Código do Cupom">
+        <button onclick="validarCupom()">Aplicar</button>
+        <button class="fechar_button" onclick="$('#overlay').hide(); $('#pop-up-cupom').hide();">Fechar</button>
+    </div>
+
+    <div id="adicionar-cupom">
+        <span class="fechar" onclick="$('#overlay').hide(); $('#adicionar-cupom').hide();">X</span>
+        <input type="text" id="novo-cupom-codigo" placeholder="Novo Código">
+        <input type="number" id="novo-cupom-desconto" placeholder="Desconto (%)">
+        <button onclick="adicionarCupom()">Adicionar</button>
+        <button class="fechar_button" onclick="$('#overlay').hide(); $('#adicionar-cupom').hide();">Fechar</button>
+    </div>
+
+    <div id="lista-cupons">
+        <span class="fechar" onclick="$('#overlay').hide(); $('#lista-cupons').hide();">X</span>
+        <ul id="cupons-lista"></ul>
+    </div>
+    <!-- Exemplo de elemento de total que será atualizado -->
+    <div id="resumo-carrinho">
+        <span>Total: </span><span id="total">100.00</span>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+
+</html>
