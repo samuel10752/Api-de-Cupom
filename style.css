@@ -1,3 +1,7 @@
+body{
+    background-color: #a39f9f;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -44,8 +48,9 @@
 }
 
 button {
+    left: 230%;
     padding: 10px 20px;
-    margin: 10px;
+    margin:  10px;
     font-size: 16px;
     cursor: pointer;
     background-color: blue;
@@ -55,6 +60,20 @@ button {
 
 button:hover {
     background-color: blue;
+}
+
+#carrinho{
+    margin-top: 20%;
+    margin-left: 35%;
+}
+
+#resumo-carrinho {
+    margin-top: 5%;
+    margin-left: 46%;
+}
+
+#resumo-carrinho span{
+ color: #fff;
 }
 
 #pop-up-cupom input,
